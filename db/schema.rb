@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2018_08_06_221609) do
   create_table "locations_products", id: false, force: :cascade do |t|
     t.integer "location_id", null: false
     t.integer "product_id", null: false
+    t.index ["location_id", "product_id"], name: "index_locations_products_on_location_id_and_product_id"
   end
 
   create_table "products", force: :cascade do |t|
