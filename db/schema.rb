@@ -10,19 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_06_221609) do
+ActiveRecord::Schema.define(version: 2018_08_06_233738) do
 
-  create_table "locations", force: :cascade do |t|
-    t.string "store_number"
-    t.string "street"
-    t.string "city"
-    t.string "state"
-    t.string "zip"
-    t.string "ip_address"
-    t.string "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+# Could not dump table "locations" because of following StandardError
+#   Unknown type 'reference' for column 'user_id'
 
   create_table "locations_products", id: false, force: :cascade do |t|
     t.integer "location_id", null: false
@@ -38,15 +29,12 @@ ActiveRecord::Schema.define(version: 2018_08_06_221609) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "roles", force: :cascade do |t|
     t.string "name"
-    t.string "email"
-    t.string "pw"
-    t.boolean "end_user"
-    t.boolean "retail"
-    t.boolean "admin"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "description"
   end
+
+# Could not dump table "users" because of following StandardError
+#   Unknown type 'reference' for column 'role_id'
 
 end
