@@ -37,7 +37,7 @@ const LandingPage = (props) => {
                 <CarouselItem itemId="2">
               <Row className="intro-content2">
                 <div className="white-text text-center text-md-left col-md-6 mt-xl-5 mb-5" id="intro-content-text">
-                  <h1 className="h1-responsive font-weight-bold mt-sm-5">Up to date crime reports!</h1>
+                  <h1 className="h1-responsive font-weight-bold mt-sm-5">Earn cashback to put toward your investing goals!</h1>
                   <hr className="hr-light"/>
                   <Button color="white" onClick={handleSignUp} >Get Started</Button>
                   <Button outline color="white" onClick={handleSignIn} >Have an account? Log in!</Button>
@@ -50,7 +50,7 @@ const LandingPage = (props) => {
                 <CarouselItem itemId="3">
               <Row className="intro-content3">
                 <div className="white-text text-center text-md-left col-md-6 mt-xl-5 mb-5" id="intro-content-text">
-                  <h1 className="h1-responsive font-weight-bold mt-sm-5">Find a safe place to park!</h1>
+                  <h1 className="h1-responsive font-weight-bold mt-sm-5">Shop and save on your favorite beauty products and services!</h1>
                   <hr className="hr-light"/>
                   <Button color="white" onClick={handleSignUp} >Get Started</Button>
                   <Button outline color="white" onClick={handleSignIn} >Have an account? Log in!</Button>
@@ -63,7 +63,7 @@ const LandingPage = (props) => {
                 <CarouselItem itemId="4">
               <Row className="intro-content4">
                 <div className="white-text text-center text-md-left col-md-6 mt-xl-5 mb-5">
-                  <h1 className="h1-responsive font-weight-bold mt-sm-5">Help others make safe decisions in your neighborhood!</h1>
+                  <h1 className="h1-responsive font-weight-bold mt-sm-5">Spend, save, invest!</h1>
                   <hr className="hr-light"/>
                   <Button color="white" onClick={handleSignUp} >Get Started</Button>
                   <Button outline color="white" onClick={handleSignIn} >Have an account? Log in!</Button>
