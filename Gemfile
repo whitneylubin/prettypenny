@@ -7,7 +7,9 @@ gem 'webpacker', '~> 3.5'
 
 gem 'react_on_rails'
 
+# Bootstrap
 gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
