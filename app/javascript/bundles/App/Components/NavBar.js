@@ -1,127 +1,76 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import Button from '@material-ui/core/Button';
-import { Fa, SideNavItem, SideNavCat, SideNavNav, SideNav, SideNavLink } from 'mdbreact';
+import { Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem, NavLink, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'mdbreact';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-//DEFINES WHERE LiveMap LINK TAKES THE USER
-const handleHome = () => {
-  Turbolinks.visit('/');
+
+
+class Navbar extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            collapse: false,
+            isWideEnough: false,
+            dropdownOpen: false
+        };
+    this.onClick = this.onClick.bind(this);
+    this.toggle = this.toggle.bind(this);
+    }
+
+    onClick(){
+        this.setState({
+            collapse: !this.state.collapse,
+        });
+    }
+
+    toggle() {
+        this.setState({
+            dropdownOpen: !this.state.dropdownOpen
+        });
+    }
+
+    render() {
+        return (
+            <Router>
+                <Navbar color="indigo" dark expand="md" scrolling>
+                    <NavbarBrand href="/">
+                        <strong>Navbar</strong>
+                    </NavbarBrand>
+                    { !this.state.isWideEnough && <NavbarToggler onClick = { this.onClick } />}
+                    <Collapse isOpen = { this.state.collapse } navbar>
+                        <NavbarNav left>
+                          <NavItem active>
+                              <NavLink to="#">Home</NavLink>
+                          </NavItem>
+                          <NavItem>
+                              <NavLink to="#">Features</NavLink>
+                          </NavItem>
+                          <NavItem>
+                              <NavLink to="#">Pricing</NavLink>
+                          </NavItem>
+                          <NavItem>
+                              <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+                              <DropdownToggle nav caret>Dropdown</DropdownToggle>
+                              <DropdownMenu>
+                                  <DropdownItem href="#">Action</DropdownItem>
+                                  <DropdownItem href="#">Another Action</DropdownItem>
+                                  <DropdownItem href="#">Something else here</DropdownItem>
+                                  <DropdownItem href="#">Something else here</DropdownItem>
+                              </DropdownMenu>
+                              </Dropdown>
+                          </NavItem>
+                        </NavbarNav>
+                        <NavbarNav right>
+                          <NavItem>
+                            <form className="form-inline md-form mt-0">
+                              <input className="form-control mr-sm-2 mb-0 text-white" type="text" placeholder="Search" aria-label="Search"/>
+                            </form>
+                          </NavItem>
+                        </NavbarNav>
+                    </Collapse>
+                </Navbar>
+            </Router>
+        );
+    }
 }
 
-//DEFINES WHERE LiveMap LINK TAKES THE USER
-const handleLiveMap = () => {
-  Turbolinks.visit('/places');
-}
-
-//DEFINES WHERE CONTACT LINK TAKES THE USER
-const handleContact = () => {
-  Turbolinks.visit('/contact');
-}
-
-//DEFINES WHERE ABOUT LINK TAKES THE USER
-const handleAbout = () => {
-  Turbolinks.visit('/about');
-}
-const handleScoreBoard = () => {
-  Turbolinks.visit('/scoreboard');
-}
-const handleAccount = () => {
-  Turbolinks.visit('/users/edit');
-}
-
-const handleLogout = () => {
-  let link = document.createElement('a');
-  link.setAttribute('href', '/users/sign_out');
-  link.setAttribute('rel', 'nofollow');
-  link.setAttribute('data-method', 'delete');
-  document.body.appendChild(link);
-  link.click();
-}
-
-//STYLING FOR EACH POP UP DRAWER
-const styles = {
-  list: {
-    width: 275,
-  },
-
-};
-
-class Nav extends Component {
-	state = {
-	 left: false,
-	 bottom: false
- };
-
- //METHOD TO OPEN AND CLOSE DRAWER -- NOT ALWAYS WORKING
- toggleDrawer = (side, open) => () => {
-	this.setState({
-		[side]: open,
-	});
-};
-
-
-	render() {
-
-		const { classes } = this.props;
-
-    const sideList = (
-      <div className={classes.list}>
-				<Button className="SideNavHeader" fullWidth= {true} onClick={handleHome}></Button>
-        <Divider />
-				<List></List>
-				<Button className="SideNavOptions" fullWidth={true} onClick={handleLiveMap}>Live Map</Button>
-        <Divider />
-				<Button className="SideNavOptions" fullWidth= {true} onClick={handleScoreBoard}>ScoreBoard</Button>
-        <List></List>
-				<Divider />
-				<Button className="SideNavOptions" fullWidth= {true} onClick={handleAbout}>About</Button>
-        <List></List>
-				<Divider />
-				<Button className="SideNavOptions" fullWidth= {true} onClick={handleContact}>Contact</Button>
-        <List></List>
-				<Divider />
-				<Button className="SideNavOptions" fullWidth= {true} onClick={this.toggleDrawer('left', true)}>Connect Calender</Button>
-        <List></List>
-				<Divider />
-				<Button className="SideNavOptions" fullWidth= {true} onClick={this.toggleDrawer('left', true)}>Connect Facebook Events</Button>
-        <List></List>
-				<Divider />
-        <Button className="SideNavOptions" fullWidth= {true} onClick={handleAccount}>My Account</Button>
-        <List></List>
-				<Divider />
-        <List></List>
-        <Button className="SideNavOptions" fullWidth= {true} onClick={handleLogout}>Log Out</Button>
-        <Divider />
-      </div>
-    );
-
-
-    return (
-      <div>
-    		<Button onClick={this.toggleDrawer('left', true)}><Fa icon="bars" size="2x"></Fa></Button>
-				<Drawer open={this.state.left} onClose={this.toggleDrawer('left', false)}>
-          <div
-            tabIndex={0}
-            role="button"
-            onClick={this.toggleDrawer('left', false)}
-            onKeyDown={this.toggleDrawer('left', false)}
-          >
-            {sideList}
-          </div>
-        </Drawer>
-      </div>
-    );
-	}
-}
-
-// //DEFINE PROP TYPES FOR MATERIAL UI COMPONENTS
-// Nav.propTypes = {
-//   classes: PropTypes.object.isRequired,
-// };
-
-//EXPORTS THIS COMPONENT WITH STYLES INTACT
-export default withStyles(styles)(Nav);
+export default NavBar;
