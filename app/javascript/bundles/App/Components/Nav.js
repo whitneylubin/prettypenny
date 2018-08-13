@@ -1,10 +1,12 @@
+import ReactOnRails from 'react-on-rails';
 import React, { Component } from 'react'
 import { Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem, NavLink, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 
 
-class Navbar extends Component {
+
+class Nav extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -39,13 +41,16 @@ class Navbar extends Component {
                     <Collapse isOpen = { this.state.collapse } navbar>
                         <NavbarNav left>
                           <NavItem active>
-                              <NavLink to="#">Home</NavLink>
+                              <NavLink to="#">Find Offers</NavLink>
                           </NavItem>
                           <NavItem>
-                              <NavLink to="#">Features</NavLink>
+                              <NavLink to="#">How it works</NavLink>
                           </NavItem>
                           <NavItem>
-                              <NavLink to="#">Pricing</NavLink>
+                              <NavLink to="#">Login</NavLink>
+                          </NavItem>
+                          <NavItem>
+                              <NavLink to="#">Sign Up</NavLink>
                           </NavItem>
                           <NavItem>
                               <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
@@ -73,4 +78,4 @@ class Navbar extends Component {
     }
 }
 
-export default NavBar;
+export default Nav;
