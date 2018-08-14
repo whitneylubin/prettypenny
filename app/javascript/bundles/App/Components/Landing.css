@@ -1,0 +1,29 @@
+#landing .gradient {
+  background: linear-gradient(to 45deg, rgba(42, 27, 161, 0.7), rgba(29, 210, 177, 0.7) 100%);
+}
+
+#landing .view {
+  background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+}
+
+#landing h6 {
+  line-height: 1.7;
+}
+
+#landing .navbar {
+  transition: .5s ease-in-out,padding .5s ease-in-out;
+}
+
+#landing .top-nav-collapse {
+  background: #424f95 !important;
+}
+
+@media (max-width: 768px) {
+  #landing .navbar:not(.top-nav-collapse) {
+      background: #424f95 !important;
+  }
+}

@@ -1,79 +1,90 @@
 import ReactOnRails from 'react-on-rails';
 import React, { Component } from 'react'
-import { Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem, NavLink, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
-
+import VideoBackgroundPage from './VideoBackgroundPage.css'
 
 
 
 class Nav extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            collapse: false,
-            isWideEnough: false,
-            dropdownOpen: false
-        };
+  constructor(props) {
+    super(props),
+    this.state = {
+      collapse : false
+    }
     this.onClick = this.onClick.bind(this);
-    this.toggle = this.toggle.bind(this);
-    }
+    this.handleNavbarClick = this.handleNavbarClick.bind(this);
+  }
 
-    onClick(){
-        this.setState({
-            collapse: !this.state.collapse,
-        });
-    }
+  onClick(){
+    this.setState({
+        collapse: !this.state.collapse,
+    });
+  }
 
-    toggle() {
-        this.setState({
-            dropdownOpen: !this.state.dropdownOpen
-        });
-    }
+  handleNavbarClick(){
+    this.setState({
+      collapse: false
+    });
+  }
 
     render() {
+      const overlay = <div id="sidenav-overlay" style={{backgroundColor: 'transparent'}} onClick={this.handleNavbarClick}/>
         return (
-            <Router>
-                <Navbar color="purple" dark expand="md" scrolling>
-                    <NavbarBrand href="/">
-                        <img src="https://drive.google.com/file/d/1SimaR21ZgD_raOQrbIB6Pgc_JN2R-MhP/view?usp=sharing" height="30"/>
-                    </NavbarBrand>
-                    { !this.state.isWideEnough && <NavbarToggler onClick = { this.onClick } />}
-                    <Collapse isOpen = { this.state.collapse } navbar>
-                        <NavbarNav left>
-                          <NavItem active>
-                              <NavLink to="#">Find Offers</NavLink>
-                          </NavItem>
-                          <NavItem>
-                              <NavLink to="#">How it works</NavLink>
-                          </NavItem>
-                          <NavItem>
-                              <NavLink to="#">Login</NavLink>
-                          </NavItem>
-                          <NavItem>
-                              <NavLink to="#">Sign Up</NavLink>
-                          </NavItem>
-                          <NavItem>
-                              <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-                              <DropdownToggle nav caret>Dropdown</DropdownToggle>
-                              <DropdownMenu>
-                                  <DropdownItem href="#">Action</DropdownItem>
-                                  <DropdownItem href="#">Another Action</DropdownItem>
-                                  <DropdownItem href="#">Something else here</DropdownItem>
-                                  <DropdownItem href="#">Something else here</DropdownItem>
-                              </DropdownMenu>
-                              </Dropdown>
-                          </NavItem>
-                        </NavbarNav>
-                        <NavbarNav right>
-                          <NavItem>
-                            <form className="form-inline md-form mt-0">
-                              <input className="form-control mr-sm-2 mb-0 text-white" type="text" placeholder="Search" aria-label="Search"/>
-                            </form>
-                          </NavItem>
-                        </NavbarNav>
-                    </Collapse>
-                </Navbar>
-            </Router>
+          <Router>
+            <div>
+              <Navbar dark expand="md" fixed="top" scrolling>
+                <Container>
+                  <NavbarBrand>
+                    <span className="white-text">PrettyPenny</span>
+                  </NavbarBrand>
+                  <NavbarToggler onClick = { this.onClick } />
+                  <Collapse isOpen = {this.state.collapse} navbar>
+                    <NavbarNav left>
+                      <NavItem>
+                        <NavLink to="#!">Find Offers</NavLink>
+                      </NavItem>
+                      <NavItem>
+                        <NavLink to="#!">How It Works</NavLink>
+                      </NavItem>
+                      <NavItem>
+                        <NavLink to="#!">Log In</NavLink>
+                      </NavItem>
+                      <NavItem>
+                        <NavLink to="#!">Sign Up</NavLink>
+                      </NavItem>
+                      <NavItem>
+                        <NavLink to="#!">Opinions</NavLink>
+                      </NavItem>
+                      <NavItem>
+                        <NavLink to="#!">Team</NavLink>
+                      </NavItem>
+                      <NavItem>
+                        <NavLink to="#!">Contact</NavLink>
+                      </NavItem>
+                    </NavbarNav>
+                    <NavbarNav right >
+                      <NavItem>
+                        <NavLink to="!#">
+                          <Fa icon="facebook"></Fa>
+                        </NavLink>
+                      </NavItem>
+                      <NavItem>
+                        <NavLink to="!#">
+                          <Fa icon="twitter"></Fa>
+                        </NavLink>
+                      </NavItem>
+                      <NavItem>
+                        <NavLink to="!#">
+                          <Fa icon="instagram"></Fa>
+                        </NavLink>
+                      </NavItem>
+                    </NavbarNav>
+                  </Collapse>
+                </Container>
+              </Navbar>
+            { this.state.collapse && overlay}
+            </div>
+          </Router>
         );
     }
 }

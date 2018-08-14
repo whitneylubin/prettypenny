@@ -9,4 +9,26 @@
   left: 0!important;
   transform: none!important;
   height: 100vh;
+  width: 100vw;
 }
+
+.view .mask {
+    overflow: visible !important;
+}
+#overflow {
+  overflow: visible !important;
+}
+
+.fullView{
+  border-style: solid;
+  border: 2px;
+  border-color: red;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* #introCont{
+border-style: solid;
+border: 2px;
+border-color: red;
+} */

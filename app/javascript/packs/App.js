@@ -7,8 +7,10 @@ import Landing from '../bundles/App/Components/Landing.js'
 import Nav from '../bundles/App/Components/Nav.js'
 import VideoBackgroundPage from '../bundles/App/Components/VideoBackgroundPage.js'
 
+
+
 ReactOnRails.register({
   //REGISTER COMPONENTS BEFORE USING!
-    App, HelloWorld, Landing, VideoBackgroundPage
+    App, HelloWorld, Landing, VideoBackgroundPage, Nav
 
 });
