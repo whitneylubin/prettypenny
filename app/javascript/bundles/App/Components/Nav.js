@@ -33,9 +33,9 @@ class Nav extends Component {
     render() {
         return (
             <Router>
-                <Navbar color="indigo" dark expand="md" scrolling>
+                <Navbar color="purple" dark expand="md" scrolling>
                     <NavbarBrand href="/">
-                        <strong>Navbar</strong>
+                        <img src="https://drive.google.com/file/d/1SimaR21ZgD_raOQrbIB6Pgc_JN2R-MhP/view?usp=sharing" height="30"/>
                     </NavbarBrand>
                     { !this.state.isWideEnough && <NavbarToggler onClick = { this.onClick } />}
                     <Collapse isOpen = { this.state.collapse } navbar>
