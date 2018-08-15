@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import ReactOnRails from 'react-on-rails';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Button, Card, CardBody, CardImage, CardTitle, CardText } from 'mdbreact';
-import Nav from './Nav.js'
+import Nav from './Nav.js';
 
-class NewOffers extends Component {
+class NewOffers extends React.Component {
   render() {
 
     return (

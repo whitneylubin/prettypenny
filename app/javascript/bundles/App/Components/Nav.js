@@ -5,7 +5,7 @@ import { Navbar, NavbarBrand, NavbarNav, NavItem, NavLink, NavbarToggler, Collap
 
 
 
-class Nav extends Component {
+class Nav extends React.Component {
   constructor(props) {
     super(props),
     this.state = {
