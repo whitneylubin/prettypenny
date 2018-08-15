@@ -47,16 +47,7 @@ class Nav extends React.Component {
                         <NavLink to="#!">How It Works</NavLink>
                       </NavItem>
                       <NavItem>
-                        <NavLink to="#!">Log In</NavLink>
-                      </NavItem>
-                      <NavItem>
-                        <NavLink to="#!">Sign Up</NavLink>
-                      </NavItem>
-                      <NavItem>
-                        <NavLink to="#!">Opinions</NavLink>
-                      </NavItem>
-                      <NavItem>
-                        <NavLink to="#!">Team</NavLink>
+                        <NavLink to="#!">My Offers</NavLink>
                       </NavItem>
                       <NavItem>
                         <NavLink to="#!">Contact</NavLink>
