@@ -1,7 +1,7 @@
-import ReactOnRails from 'react-on-rails';
 import React, { Component } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom';
-import VideoBackgroundPage from './VideoBackgroundPage.css'
+import { Navbar, NavbarBrand, NavbarNav, NavItem, NavLink, NavbarToggler, Collapse, Mask, Row, Col, Fa, Button, View, Container, FormInline } from 'mdbreact';
+
 
 
 
