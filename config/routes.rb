@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   resources :user, only: [:index]
   get 'new_offers', to: 'new_offers#index'
   get 'hello_world', to: 'hello_world#index'
+  get 'log_in', to: 'log_in#index'
+  get 'sign_up', to: 'sign_up#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
