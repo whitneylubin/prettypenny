@@ -5,6 +5,10 @@ ruby '2.5.1'
 
 gem 'webpacker', '~> 3.5'
 
+gem 'devise'
+
+gem 'omniauth-facebook'
+
 gem 'react_on_rails'
 
 # Bootstrap
