@@ -13,8 +13,7 @@ const handleLogout = () => {
 }
 
 
-
-class Nav extends React.Component {
+class LogInNav extends React.Component {
   constructor(props) {
     super(props),
     this.state = {
@@ -36,6 +35,7 @@ class Nav extends React.Component {
     });
   }
 
+
     render() {
       const overlay = <div id="sidenav-overlay" style={{backgroundColor: 'transparent'}} onClick={this.handleNavbarClick}/>
         return (
@@ -53,13 +53,10 @@ class Nav extends React.Component {
                         <NavLink to="#!">Find Offers</NavLink>
                       </NavItem>
                       <NavItem>
-                        <NavLink to="#!">How It Works</NavLink>
-                      </NavItem>
-                      <NavItem>
                         <NavLink to="#!">My Offers</NavLink>
                       </NavItem>
                       <NavItem>
-                        <NavLink to="#!">Contact</NavLink>
+                        <NavLink to='#'><Button onClick={handleLogout}>Sign Out</Button></NavLink>
                       </NavItem>
                     </NavbarNav>
                     <NavbarNav right >
@@ -89,4 +86,4 @@ class Nav extends React.Component {
     }
 }
 
-export default Nav;
+export default LogInNav;

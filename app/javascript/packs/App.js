@@ -7,9 +7,10 @@ import Landing from '../bundles/App/Components/Landing.js';
 import SignUp from '../bundles/App/Components/SignUp.js';
 import LogIn from '../bundles/App/Components/LogIn.js';
 import NewOffers from '../bundles/App/Components/NewOffers.js'
+import PostLogInOffers from '../bundles/App/Components/PostLogInOffers.js'
 
 
 ReactOnRails.register({
   //REGISTER COMPONENTS BEFORE USING!
-    App, HelloWorld, Landing, SignUp, LogIn, NewOffers
+    App, HelloWorld, Landing, SignUp, LogIn, NewOffers, PostLogInOffers
 });

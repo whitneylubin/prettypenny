@@ -2,16 +2,16 @@ import React, { Component } from 'react'
 import ReactOnRails from 'react-on-rails';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Button, Card, CardBody, CardImage, CardTitle, CardText } from 'mdbreact';
-import Nav from './Nav.js';
+import LogInNav from './LogInNav.js';
 import OfferCards from './OfferCards.js';
 
-class NewOffers extends React.Component {
+class PostLogInOffers extends React.Component {
   render() {
 
     return (
       <div>
         <div>
-          <Nav />
+          <LogInNav />
         </div>
         <div>
           <OfferCards />
@@ -20,4 +20,4 @@ class NewOffers extends React.Component {
     )
   }
 }
-export default NewOffers;
+export default PostLogInOffers;
