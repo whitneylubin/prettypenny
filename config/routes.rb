@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  root 'home#index'
 
   devise_for :users
-  root 'home#index'
   resources :home, only: [:index]
   resources :user, only: [:index]
   get 'new_offers', to: 'new_offers#index'

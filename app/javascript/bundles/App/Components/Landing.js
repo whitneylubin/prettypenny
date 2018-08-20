@@ -2,16 +2,10 @@ import React, { Component } from 'react';
 import ReactOnRails from 'react-on-rails';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Navbar, NavbarBrand, NavbarNav, NavItem, NavLink, NavbarToggler, Collapse, Mask, Row, Col, Fa, Button, View, Container, FormInline } from 'mdbreact';
+import LoginControl from './LoginControl.js';
 import './Landing.css';
 
-const handleLogout = () => {
-  let link = document.createElement('a');
-  link.setAttribute('href', 'users/sign_out');
-  link.setAttribute('rel', 'nofollow');
-  link.setAttribute('data-method', 'delete');
-  document.body.appendChild(link);
-  link.click();
-}
+
 
 
 class Landing extends React.Component {
@@ -56,13 +50,10 @@ class Landing extends React.Component {
                       <NavLink to="#!">How it Works</NavLink>
                   </NavItem>
                   <NavItem>
-                      <NavLink to="#!">Log In</NavLink>
-                  </NavItem>
-                  <NavItem>
                       <NavLink to="#!">Sign Up</NavLink>
                   </NavItem>
                   <NavItem>
-                      <NavLink to='#!'><Button onClick={handleLogout}>Sign Out</Button></NavLink>
+                      <LoginControl isLoggedIn={this.props.isLoggedIn} />
                   </NavItem>
                 </NavbarNav>
                 <NavbarNav right >
