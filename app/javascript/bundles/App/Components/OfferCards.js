@@ -9,7 +9,7 @@ class OfferCards extends React.Component {
   render() {
 
     return (
-      <div>
+      <div className="d-flex justify-content-around">
         <Card className="w-25 p-3">
           <CardImage className="img-fluid"  src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" />
             <CardBody>
