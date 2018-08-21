@@ -10,8 +10,8 @@ class OfferCards extends React.Component {
 
     return (
       <div>
-        <Card>
-          <CardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" />
+        <Card className="w-25 p-3">
+          <CardImage className="img-fluid"  src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" />
             <CardBody>
                 <CardTitle>Card title</CardTitle>
                 <CardText>Some quick example text to build on the card title and make up the bulk of the cards content.</CardText>
