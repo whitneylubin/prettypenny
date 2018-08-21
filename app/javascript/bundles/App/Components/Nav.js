@@ -13,6 +13,13 @@ const handleLogout = () => {
   link.click();
 }
 
+const handleFindOffers = () => {
+  let link = document.createElement('a');
+  link.setAttribute('href', '/new_offers');
+  document.body.appendChild(link);
+  link.click();
+}
+
 
 
 class Nav extends React.Component {
@@ -50,7 +57,7 @@ class Nav extends React.Component {
                 <Collapse isOpen = {this.state.collapse} navbar>
                   <NavbarNav left>
                     <NavItem active>
-                        <NavLink to="#!">Find Offers</NavLink>
+                        <NavLink onClick= {handleFindOffers} to="/new_offers">Find Offers</NavLink>
                     </NavItem>
                     <NavItem>
                         <NavLink to="#!">How it Works</NavLink>

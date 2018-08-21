@@ -11,7 +11,9 @@ class LogIn extends React.Component  {
     return(
       <div>
         <div>
-          <Nav />
+          <Router>
+            <Nav />
+          </Router>
         </div>
       <Container>
         <Row>
