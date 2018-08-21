@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Navbar, NavbarBrand, NavbarNav, NavItem, NavLink, NavbarToggler, Collapse, Mask, Row, Col, Fa, Button, View, Container, FormInline } from 'mdbreact';
-
+import SignUpControl from './SignUpControl.js';
+import LoginControl from './LoginControl.js';
 
 const handleLogout = () => {
   let link = document.createElement('a');
@@ -39,52 +40,42 @@ class Nav extends React.Component {
     render() {
       const overlay = <div id="sidenav-overlay" style={{backgroundColor: 'transparent'}} onClick={this.handleNavbarClick}/>
         return (
-          <Router>
-            <div>
-              <Navbar dark expand="md" fixed="top" scrolling>
-                <Container>
-                  <NavbarBrand>
-                    <span className="white-text">PrettyPenny</span>
-                  </NavbarBrand>
-                  <NavbarToggler onClick = { this.onClick } />
-                  <Collapse isOpen = {this.state.collapse} navbar>
-                    <NavbarNav left>
-                      <NavItem>
+          <div>
+            <Navbar dark expand="md" fixed="top" scrolling>
+              <Container>
+                <NavbarBrand>
+                  <strong className="white-text">PrettyPenny</strong>
+                </NavbarBrand>
+                <NavbarToggler onClick = { this.onClick } />
+                <Collapse isOpen = {this.state.collapse} navbar>
+                  <NavbarNav left>
+                    <NavItem active>
                         <NavLink to="#!">Find Offers</NavLink>
-                      </NavItem>
-                      <NavItem>
-                        <NavLink to="#!">How It Works</NavLink>
-                      </NavItem>
-                      <NavItem>
-                        <NavLink to="#!">My Offers</NavLink>
-                      </NavItem>
-                      <NavItem>
-                        <NavLink to="#!">Contact</NavLink>
-                      </NavItem>
-                    </NavbarNav>
-                    <NavbarNav right >
-                      <NavItem>
-                        <NavLink to="!#">
-                          <Fa icon="facebook"></Fa>
-                        </NavLink>
-                      </NavItem>
-                      <NavItem>
-                        <NavLink to="!#">
-                          <Fa icon="twitter"></Fa>
-                        </NavLink>
-                      </NavItem>
-                      <NavItem>
-                        <NavLink to="!#">
-                          <Fa icon="instagram"></Fa>
-                        </NavLink>
-                      </NavItem>
-                    </NavbarNav>
-                  </Collapse>
-                </Container>
-              </Navbar>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink to="#!">How it Works</NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <SignUpControl isLoggedIn={this.props.isLoggedIn} />
+                    </NavItem>
+                    <NavItem>
+                        <LoginControl isLoggedIn={this.props.isLoggedIn} />
+                    </NavItem>
+                  </NavbarNav>
+                  <NavbarNav right >
+                    <NavItem>
+                      <FormInline waves>
+                        <div className="md-form my-0">
+                          <input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"/>
+                        </div>
+                      </FormInline>
+                    </NavItem>
+                  </NavbarNav>
+                </Collapse>
+              </Container>
+            </Navbar>
             { this.state.collapse && overlay}
-            </div>
-          </Router>
+          </div>
         );
     }
 }

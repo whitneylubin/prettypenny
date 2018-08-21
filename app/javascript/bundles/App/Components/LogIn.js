@@ -13,12 +13,11 @@ class LogIn extends React.Component  {
         <div>
           <Nav />
         </div>
-      <div>
       <Container>
         <Row>
           <Col md="6">
             <form>
-              <p className="h5 text-center mb-4">Log in</p>
+              <p className="h5 text-center mb-4">Log In</p>
               <div className="grey-text">
                 <Input label="Type your email" icon="envelope" group type="email" validate error="wrong" success="right"/>
                 <Input label="Type your password" icon="lock" group type="password" validate/>
@@ -30,7 +29,6 @@ class LogIn extends React.Component  {
           </Col>
         </Row>
       </Container>
-    </div>
     </div>
     );
   }

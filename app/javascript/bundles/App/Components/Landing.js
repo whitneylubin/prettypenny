@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactOnRails from 'react-on-rails';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Navbar, NavbarBrand, NavbarNav, NavItem, NavLink, NavbarToggler, Collapse, Mask, Row, Col, Fa, Button, View, Container, FormInline } from 'mdbreact';
+import Nav from './Nav.js';
 import LoginControl from './LoginControl.js';
 import './Landing.css';
 
@@ -34,42 +35,7 @@ class Landing extends React.Component {
     return (
       <div id="landing">
         <Router>
-          <div>
-          <Navbar dark expand="md" fixed="top" scrolling>
-            <Container>
-              <NavbarBrand>
-                <strong className="white-text">PrettyPenny</strong>
-              </NavbarBrand>
-              <NavbarToggler onClick = { this.onClick } />
-              <Collapse isOpen = {this.state.collapse} navbar>
-                <NavbarNav left>
-                  <NavItem active>
-                      <NavLink to="#!">Find Offers</NavLink>
-                  </NavItem>
-                  <NavItem>
-                      <NavLink to="#!">How it Works</NavLink>
-                  </NavItem>
-                  <NavItem>
-                      <NavLink to="#!">Sign Up</NavLink>
-                  </NavItem>
-                  <NavItem>
-                      <LoginControl isLoggedIn={this.props.isLoggedIn} />
-                  </NavItem>
-                </NavbarNav>
-                <NavbarNav right >
-                  <NavItem>
-                    <FormInline waves>
-                      <div className="md-form my-0">
-                        <input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"/>
-                      </div>
-                    </FormInline>
-                  </NavItem>
-                </NavbarNav>
-              </Collapse>
-            </Container>
-          </Navbar>
-          { this.state.collapse && overlay}
-          </div>
+          <Nav isLoggedIn={this.props.isLoggedIn} />
         </Router>
           <View>
             <Mask className="d-flex justify-content-center align-items-center gradient">

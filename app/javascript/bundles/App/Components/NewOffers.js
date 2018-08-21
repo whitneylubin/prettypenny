@@ -10,9 +10,9 @@ class NewOffers extends React.Component {
 
     return (
       <div>
-        <div>
-          <Nav />
-        </div>
+        <Router>
+          <Nav isLoggedIn={this.props.isLoggedIn} />
+        </Router>
         <div>
           <OfferCards />
         </div>

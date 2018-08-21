@@ -11,9 +11,9 @@ class SignUp extends React.Component {
 
     return(
       <div>
-        <div>
-          <Nav />
-        </div>
+        <Router>
+          <Nav isLoggedIn={this.props.isLoggedIn} />
+        </Router>
       <div>
       <Container>
         <Row>
