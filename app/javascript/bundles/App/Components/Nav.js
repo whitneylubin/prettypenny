@@ -21,6 +21,13 @@ const handleFindOffers = () => {
 }
 
 
+const handleNavBrand = () => {
+  let link = document.createElement('a');
+  link.setAttribute('href', '/');
+  document.body.appendChild(link);
+  link.click();
+}
+
 
 class Nav extends React.Component {
   constructor(props) {
@@ -51,7 +58,7 @@ class Nav extends React.Component {
             <Navbar dark expand="md" fixed="top" scrolling>
               <Container>
                 <NavbarBrand>
-                  <strong className="white-text">PrettyPenny</strong>
+                  <strong className="white-text"><NavLink onClick={handleNavBrand} to="#!">PrettyPenny</NavLink></strong>
                 </NavbarBrand>
                 <NavbarToggler onClick = { this.onClick } />
                 <Collapse isOpen = {this.state.collapse} navbar>
