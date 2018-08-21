@@ -57,7 +57,7 @@ class Nav extends React.Component {
                 <Collapse isOpen = {this.state.collapse} navbar>
                   <NavbarNav left>
                     <NavItem active>
-                        <NavLink onClick= {handleFindOffers} to="/new_offers">Find Offers</NavLink>
+                        <NavLink onClick= {handleFindOffers} to="#!">Find Offers</NavLink>
                     </NavItem>
                     <NavItem>
                         <NavLink to="#!">How it Works</NavLink>
