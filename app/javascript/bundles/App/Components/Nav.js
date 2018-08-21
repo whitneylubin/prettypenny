@@ -69,15 +69,6 @@ class Nav extends React.Component {
                         <LoginControl isLoggedIn={this.props.isLoggedIn} />
                     </NavItem>
                   </NavbarNav>
-                  <NavbarNav right >
-                    <NavItem>
-                      <FormInline waves>
-                        <div className="md-form my-0">
-                          <input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"/>
-                        </div>
-                      </FormInline>
-                    </NavItem>
-                  </NavbarNav>
                 </Collapse>
               </Container>
             </Navbar>
