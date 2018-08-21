@@ -6,7 +6,7 @@ import { Button, NavLink} from 'mdbreact';
 
 const handleSignUpClick = () => {
   let link = document.createElement('a');
-  link.setAttribute('href', '/sign_up');
+  link.setAttribute('href', '/users/sign_up');
   document.body.appendChild(link);
   link.click();
 }
