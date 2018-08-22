@@ -57,7 +57,6 @@ class Landing extends React.Component {
               </Container>
             </Mask>
           </View>
-
           <Container>
             <Row className="py-5">
               <Col md="12" className="text-center">
