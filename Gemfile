@@ -11,6 +11,8 @@ gem 'omniauth-facebook'
 
 gem 'react_on_rails'
 
+gem 'hirb'
+
 # Bootstrap
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
