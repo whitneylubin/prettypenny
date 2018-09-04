@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_24_230010) do
+ActiveRecord::Schema.define(version: 2018_08_31_233818) do
 
   create_table "locations", force: :cascade do |t|
     t.string "store_number"
@@ -42,11 +42,14 @@ ActiveRecord::Schema.define(version: 2018_08_24_230010) do
     t.string "brand_name"
   end
 
-  create_table "products_retailers", id: false, force: :cascade do |t|
-    t.integer "product_id", null: false
-    t.integer "retailer_id", null: false
+  create_table "rebates", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "retailer_id"
     t.integer "amount"
-    t.index ["product_id", "retailer_id"], name: "index_products_retailers_on_product_id_and_retailer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_rebates_on_product_id"
+    t.index ["retailer_id"], name: "index_rebates_on_retailer_id"
   end
 
   create_table "retailers", force: :cascade do |t|
