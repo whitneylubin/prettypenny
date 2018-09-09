@@ -5,16 +5,22 @@ import { Button, Card, CardBody, CardImage, CardTitle, CardText } from 'mdbreact
 import Nav from './Nav.js';
 import OfferCards from './OfferCards.js';
 
+
+
 class NewOffers extends React.Component {
   render() {
 
     return (
-      <div>
-        <Router>
-          <Nav isLoggedIn={this.props.isLoggedIn} />
-        </Router>
-        <div>
-          <OfferCards />
+      <div className="container-fluid">
+        <div className="row">
+          <Router>
+            <Nav isLoggedIn={this.props.isLoggedIn} />
+          </Router>
+        </div>
+        <div className="container-fluid">
+          <div className="card-deck">
+            <OfferCards />
+          </div>
         </div>
       </div>
     )
