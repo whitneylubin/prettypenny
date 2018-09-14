@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ReactOnRails from 'react-on-rails';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Button, Card, CardBody, CardImage, CardTitle, CardText } from 'mdbreact';
-import Nav from './Nav.js';
+import MyNav from './MyNav.js';
 import OfferCards from './OfferCards.js';
 
 
@@ -14,7 +14,7 @@ class NewOffers extends React.Component {
       <div className="container-fluid">
         <div className="row">
           <Router>
-            <Nav isLoggedIn={this.props.isLoggedIn} />
+            <MyNav isLoggedIn={this.props.isLoggedIn} />
           </Router>
         </div>
         <div className="container-fluid">

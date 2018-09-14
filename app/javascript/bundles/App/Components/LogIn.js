@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactOnRails from 'react-on-rails';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Container, Row, Col, Input, Button } from 'mdbreact';
-import Nav from './Nav.js';
+import MyNav from './MyNav.js';
 
 class LogIn extends React.Component  {
 
@@ -12,7 +12,7 @@ class LogIn extends React.Component  {
       <div>
         <div>
           <Router>
-            <Nav />
+            <MyNav />
           </Router>
         </div>
       <Container>

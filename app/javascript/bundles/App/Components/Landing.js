@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactOnRails from 'react-on-rails';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Navbar, NavbarBrand, NavbarNav, NavItem, NavLink, NavbarToggler, Collapse, Mask, Row, Col, Fa, Button, View, Container, FormInline } from 'mdbreact';
-import Nav from './Nav.js';
+import MyNav from './MyNav.js';
 import LoginControl from './LoginControl.js';
 import './Landing.css';
 
@@ -35,7 +35,7 @@ class Landing extends React.Component {
     return (
       <div id="landing">
         <Router>
-          <Nav isLoggedIn={this.props.isLoggedIn} />
+          <MyNav isLoggedIn={this.props.isLoggedIn} />
         </Router>
           <View>
             <Mask className="d-flex justify-content-center align-items-center gradient">
